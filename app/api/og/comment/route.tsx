@@ -1,6 +1,9 @@
 import { ImageResponse } from "next/og"
 import { type NextRequest } from "next/server"
 
+// Keep this renderer on the Node.js runtime so it is not subject to the 1 MB Edge limit.
+export const runtime = "nodejs"
+
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url)
   const author = searchParams.get("author") || "Topluluk Üyesi"

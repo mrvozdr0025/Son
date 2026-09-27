@@ -22,6 +22,8 @@ const _geistMono = Geist_Mono({ subsets: ['latin'] })
 
 const siteUrl = getBaseUrl()
 
+export const dynamic = 'force-dynamic'
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {

@@ -556,11 +556,30 @@ ALTER TABLE ai_settings ADD COLUMN IF NOT EXISTS "modelId" text NOT NULL DEFAULT
 ALTER TABLE ai_settings ADD COLUMN IF NOT EXISTS "temperature" double precision NOT NULL DEFAULT 1.0;
 ALTER TABLE ai_settings ADD COLUMN IF NOT EXISTS "maxTokens" integer NOT NULL DEFAULT 2048;
 
-CREATE TABLE IF NOT EXISTS site_settings (
+  CREATE TABLE IF NOT EXISTS site_settings (
   id text PRIMARY KEY DEFAULT 'site_config',
   "defaultTheme" text NOT NULL DEFAULT 'system',
+  "googleAnalyticsId" text,
+  "googleSearchConsoleCode" text,
+  "googleAdsenseId" text,
+  "googleTagManagerId" text,
+  "customHeadCode" text,
+  "customBodyCode" text,
+  "siteTitle" text,
+  "siteDescription" text,
+  "robotsTxt" text,
   "updatedAt" timestamp NOT NULL DEFAULT now()
-);
+  );
+
+  ALTER TABLE site_settings ADD COLUMN IF NOT EXISTS "googleAnalyticsId" text;
+  ALTER TABLE site_settings ADD COLUMN IF NOT EXISTS "googleSearchConsoleCode" text;
+  ALTER TABLE site_settings ADD COLUMN IF NOT EXISTS "googleAdsenseId" text;
+  ALTER TABLE site_settings ADD COLUMN IF NOT EXISTS "googleTagManagerId" text;
+  ALTER TABLE site_settings ADD COLUMN IF NOT EXISTS "customHeadCode" text;
+  ALTER TABLE site_settings ADD COLUMN IF NOT EXISTS "customBodyCode" text;
+  ALTER TABLE site_settings ADD COLUMN IF NOT EXISTS "siteTitle" text;
+  ALTER TABLE site_settings ADD COLUMN IF NOT EXISTS "siteDescription" text;
+  ALTER TABLE site_settings ADD COLUMN IF NOT EXISTS "robotsTxt" text;
 
 ALTER TABLE profiles ADD COLUMN IF NOT EXISTS "themePreference" text NOT NULL DEFAULT 'system';
 `
