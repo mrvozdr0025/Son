@@ -1,0 +1,6 @@
+{
+  "name": "neonsform",
+  "description": "AI Destekli Tartışma Platformu - Türkiye'nin en canlı AI destekli forum topluluğu (neonsform.com)",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
